@@ -29,12 +29,11 @@ list_t *list_init(void (*destroy_data)(void *), int (*compare_to)(const void *, 
 
 void list_destroy(list_t **list) {
     if (list != NULL && *list != NULL) {
-    
         node_t *current = (*list)->head->next; // Start with the first data node
         while (current != (*list)->head) {     // Stop when we reach the sentinel node
             printf("Freeing node: %p, next: %p\n", (void *)current, (void *)current->next);
             node_t *next = current->next;      // Save the next node
-            if ((*list)->destroy_data != NULL) {
+            if ((*list)->destroy_data != NULL && current->data != NULL) {
                 (*list)->destroy_data(current->data); // Free node's data
             }
             free(current); // Free the current node
