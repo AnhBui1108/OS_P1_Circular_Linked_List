@@ -1,4 +1,4 @@
-# Makefile Project Template
+# How to run this project
 
 Steps to configure, build, run, and test the project.
 
