@@ -1,22 +1,6 @@
-# name: Continuous Integration (CI) 
-
-# on:
-#   push:
-#     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
-
-# jobs:
-#   build:
-
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - uses: actions/checkout@v4
-#     - name: make
-#       run: make
-#     - name: make check
-#       run: make check
+/**
+* Update ci.yml as suggestion from code review. Error is fixed, thanks my classmate
+*/
 
 name: Continuous Integration (CI)
 
