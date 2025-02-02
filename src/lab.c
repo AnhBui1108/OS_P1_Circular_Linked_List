@@ -51,22 +51,22 @@ list_t *list_add(list_t *list, void *data) {
     if (!data) return list; // Do not add NULL data
 
     // Create a new node
-    node_t *newNode = (node_t *)malloc(sizeof(node_t));
-    if (!newNode) return list; // Allocation failure
+    node_t *new_node = (node_t *)malloc(sizeof(node_t));
+    if (!new_node) return list; // Allocation failure
 
-    newNode->data = data;
+    new_node->data = data;
 
     if (list->size == 0) { // First data node
-        newNode->next = list->head;
-        newNode->prev = list->head;
-        list->head->next = newNode;
-        list->head->prev = newNode;
+        new_node->next = list->head;
+        new_node->prev = list->head;
+        list->head->next = new_node;
+        list->head->prev = new_node;
     } else { // Non-empty list
-        newNode->next = list->head->next;
-        newNode->prev = list->head;
+        new_node->next = list->head->next;
+        new_node->prev = list->head;
 
-        list->head->next->prev = newNode;
-        list->head->next = newNode;
+        list->head->next->prev = new_node;
+        list->head->next = new_node;
     }
 
     list->size++; 
